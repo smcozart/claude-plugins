@@ -1,0 +1,22 @@
+{
+  "name": "smcozart",
+  "owner": {
+    "name": "Sean Cozart"
+  },
+  "description": "Sean Cozart's Claude Code plugins \u2014 one plugin per problem.",
+  "allowCrossMarketplaceDependenciesOn": [
+    "claude-plugins-official"
+  ],
+  "plugins": [
+    {
+      "name": "ai-sdlc",
+      "description": "Ties agent work to source control: intent, GitHub issues, ADRs, a proof gate, and agent orchestration of issues.",
+      "source": {
+        "source": "git-subdir",
+        "url": "smcozart/cozyharness",
+        "path": "plugin",
+        "ref": "ai-sdlc--v1.6.0"
+      }
+    }
+  ]
+}
