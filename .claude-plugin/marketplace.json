@@ -13,7 +13,7 @@
       "description": "Ties agent work to source control: intent, GitHub issues, ADRs, a proof gate, and agent orchestration of issues.",
       "source": {
         "source": "git-subdir",
-        "url": "smcozart/cozyharness",
+        "url": "https://github.com/smcozart/cozyharness.git",
         "path": "plugin",
         "ref": "ai-sdlc--v1.6.0"
       }
