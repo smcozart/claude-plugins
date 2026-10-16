@@ -4,7 +4,7 @@ A catalog. Each plugin lives in its own repo; this file pins the version.
 
 | Plugin | Solves | Source |
 |---|---|---|
-| `ai-sdlc` | Ties agent work to source control and sets up agent orchestration of issues. Needs `mattpocock-skills` (installed with it). | `smcozart/cozyharness` › `plugin/` |
+| `ai-sdlc` | Ties agent work to source control and sets up agent orchestration of issues. Needs `mattpocock-skills` (installed with it). | `smcozart/cozy_ai-sdlc` › `plugin/` |
 
 ## Install
 
