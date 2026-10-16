@@ -8,6 +8,8 @@ A catalog. Each plugin lives in its own repo; this file pins the version.
 
 ## Install
 
+First, once per machine: `claude plugin marketplace add anthropics/claude-plugins-official`. Dependencies such as `mattpocock-skills` install from there; without it, `ai-sdlc` installs but fails to load.
+
 ```bash
 npx smcozart ai-sdlc                     # user scope (default)
 npx smcozart ai-sdlc --scope project     # this repo only
