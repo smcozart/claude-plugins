@@ -18,6 +18,16 @@
         "ref": "ai-sdlc--v1.6.0",
         "sha": "1cc27a2eb0f7e1535487641ffc89a0ff3d0ac01c"
       }
+    },
+    {
+      "name": "cozy-setup",
+      "description": "Sean Cozart's session setup: the Cozy Architect output style and the macOS PATH guard hook. Private repo.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/smcozart/cozy_setup.git",
+        "ref": "cozy-setup--v0.1.0",
+        "sha": "a36022f4797e74ef383733d8359dbd937fbc4b20"
+      }
     }
   ]
 }
