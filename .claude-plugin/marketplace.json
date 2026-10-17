@@ -28,6 +28,16 @@
         "ref": "cozy-setup--v0.1.0",
         "sha": "a36022f4797e74ef383733d8359dbd937fbc4b20"
       }
+    },
+    {
+      "name": "cozy-view",
+      "description": "Agent observability for Claude Code on Databricks: /trace how a skill behaves in real sessions, and transcript sync that stays off until the machine names a profile. Private repo.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/smcozart/cozy_view.git",
+        "ref": "cozy-view--v0.1.0",
+        "sha": "c42ec94520c18950330443700ed48a80ea294bb8"
+      }
     }
   ]
 }

@@ -6,6 +6,7 @@ A catalog. Each plugin lives in its own repo; this file pins the version.
 |---|---|---|
 | `ai-sdlc` | Ties agent work to source control and sets up agent orchestration of issues. Needs `mattpocock-skills` (installed with it). | `smcozart/cozy_ai-sdlc` › `plugin/` |
 | `cozy-setup` | Makes a new computer behave like Sean's: the Cozy Architect output style (select `cozy-setup:Cozy Architect` once) and the macOS PATH guard hook. Private: install needs access to the repo. | `smcozart/cozy_setup` |
+| `cozy-view` | Shows how agents and skills really behave: `/cozy-view:trace`, on Claude Code transcripts in Databricks. Sync is off until the machine opts in: `~/.config/cozy_view/profile` holds a Databricks profile name. Private: install needs access to the repo. | `smcozart/cozy_view` |
 
 ## Install
 
