@@ -15,8 +15,8 @@
         "source": "git-subdir",
         "url": "https://github.com/smcozart/cozy_ai-sdlc.git",
         "path": "plugin",
-        "ref": "ai-sdlc--v1.6.0",
-        "sha": "1cc27a2eb0f7e1535487641ffc89a0ff3d0ac01c"
+        "ref": "ai-sdlc--v1.6.1",
+        "sha": "c607ab67310b2178e8da3820aa97a45012364809"
       }
     },
     {
