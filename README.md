@@ -31,8 +31,14 @@ claude plugin install cozysuite@cozysuite --scope project
 
 Then in Claude Code: `/reload-plugins`, `/cozysuite:setup`, confirm, `/reload-plugins`,
 and commit `.claude/settings.json`. For the workflow files, say "start a new project"
-(ai-sdlc `new-project`). A fresh clone of a set-up repo needs only
-`claude plugin install <each enabledPlugins entry> --scope project`, or `/cozysuite:setup`.
+(ai-sdlc `new-project`).
+
+A fresh clone of a set-up repo: run the three commands above (the `add` reads the
+repo's own declaration), then `claude plugin install <id> --scope project` for each
+`enabledPlugins` entry set to `true`, or open Claude Code and run `/cozysuite:setup`.
+
+A member of an installed preset cannot be disabled on its own. For "a preset minus a
+tool", install the remaining members by name instead of the preset.
 
 ## Upgrade a project
 
