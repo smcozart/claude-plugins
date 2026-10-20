@@ -1,27 +1,62 @@
-# smcozart — Claude Code plugins
+# cozysuite — Claude Code tools
 
-A catalog. Each plugin lives in its own repo; this file pins the version.
+One catalog. Each tool lives in its own repo; this file pins the version.
+**Tools install per project, never at user scope**: a repo loads only what its
+committed `.claude/settings.json` names.
 
 | Plugin | Solves | Source |
 |---|---|---|
+| `cozysuite` | `/cozysuite:setup` picks a project's tools: it reads the repo, recommends a preset ± tools, and installs at project scope after you confirm. You start it; it costs no context until then. | `./plugins/cozysuite` |
+| `core` (preset) | Any code repo under the workflow: `ai-sdlc`, `ponytail`, `cozy-view`, `cozy-setup`. | `./plugins/core` |
 | `ai-sdlc` | Ties agent work to source control and sets up agent orchestration of issues. Needs `mattpocock-skills` (installed with it). | `smcozart/cozy_ai-sdlc` › `plugin/` |
-| `cozy-setup` | Makes a new computer behave like Sean's: the Cozy Architect output style (select `cozy-setup:Cozy Architect` once) and the macOS PATH guard hook. Private: install needs access to the repo. | `smcozart/cozy_setup` |
-| `cozy-view` | Shows how agents and skills really behave: `/cozy-view:trace`, on Claude Code transcripts in Databricks. Sync is off until the machine opts in: `~/.config/cozy_view/profile` holds a Databricks profile name. Private: install needs access to the repo. | `smcozart/cozy_view` |
+| `ponytail` | Third party: forces the simplest, shortest solution that works. Pinned here, so it moves only when this catalog does. | `DietrichGebert/ponytail` |
+| `cozy-setup` | The Cozy Architect output style (select `cozy-setup:Cozy Architect` once) and the macOS PATH guard hook. Private. | `smcozart/cozy_setup` |
+| `cozy-view` | Shows how agents and skills really behave: `/cozy-view:trace`, on Claude Code transcripts in Databricks. Sync is off until the machine opts in: `~/.config/cozy_view/profile` holds a Databricks profile name. Private. | `smcozart/cozy_view` |
+| `cozyskills` | Report and marketing skills: cozyreport, optimize-seo, optimize-aeo, skill-or-script. Private. | `smcozart/cozyskills` |
 
-## Install
+Private: install needs read access to the repo.
 
-First, once per machine: `claude plugin marketplace add anthropics/claude-plugins-official`. Dependencies such as `mattpocock-skills` install from there; without it, `ai-sdlc` installs but fails to load.
+## Set up a project
 
-Then, inside Claude Code:
+Once per machine: `claude plugin marketplace add anthropics/claude-plugins-official`
+(dependencies such as `mattpocock-skills` install from there).
+
+In the project folder, from a shell:
 
 ```
-/plugin marketplace add smcozart/claude-plugins
-/plugin install ai-sdlc@smcozart
+claude plugin marketplace add smcozart/cozysuite --scope project
+claude plugin marketplace update cozysuite      # the local copy is not refreshed by add
+claude plugin install cozysuite@cozysuite --scope project
 ```
 
-For this repo only, from a shell: `claude plugin install ai-sdlc@smcozart --scope project`.
+Then in Claude Code: `/reload-plugins`, `/cozysuite:setup`, confirm, `/reload-plugins`,
+and commit `.claude/settings.json`. For the workflow files, say "start a new project"
+(ai-sdlc `new-project`). A fresh clone of a set-up repo needs only
+`claude plugin install <each enabledPlugins entry> --scope project`, or `/cozysuite:setup`.
 
-## Release a plugin
+## Upgrade a project
 
-1. In the plugin repo: merge, then `claude plugin tag plugin` (→ `<name>--v<version>`), push the tag.
-2. Here: set that plugin's `ref` to the new tag and `sha` to the commit the tag points to (`git ls-remote <repo> 'refs/tags/<tag>^{}'`), `claude plugin validate .`, merge. The `sha` pin means a moved tag cannot change what installs.
+You choose when; moving a pin here changes no project by itself.
+
+```
+claude plugin marketplace update cozysuite
+claude plugin update <tool>@cozysuite --scope project
+```
+
+Then `/reload-plugins` or restart.
+
+## Release a tool
+
+1. In the tool repo: merge, then `claude plugin tag <dir> --push` (→ `<name>--v<version>`).
+2. Here: set its `ref` to the new tag and `sha` to the commit the tag points to
+   (`git ls-remote <repo> 'refs/tags/<tag>^{}'`; a lightweight tag has no `^{}` line,
+   use the tag's own sha), `claude plugin validate .`, merge. The `sha` pin means a moved
+   tag cannot change what installs.
+
+A preset (`plugins/<name>/.claude-plugin/plugin.json`) lists its members in
+`dependencies`; bump its `version` only when that list changes. A new tool gets an
+entry with a tag and sha; a new preset gets `"category": "preset"`.
+
+## Restore point
+
+`golden-catalog-2026-10-20`: the catalog before the rename (marketplace `smcozart`).
