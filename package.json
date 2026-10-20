@@ -1,9 +1,0 @@
-{
-  "name": "smcozart",
-  "version": "0.1.0",
-  "description": "Install Sean Cozart's Claude Code plugins: npx smcozart <plugin>",
-  "bin": { "smcozart": "bin/install.js" },
-  "files": ["bin", ".claude-plugin"],
-  "repository": "github:smcozart/claude-plugins",
-  "license": "MIT"
-}

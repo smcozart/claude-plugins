@@ -1,22 +1,44 @@
 {
-  "name": "smcozart",
+  "name": "cozysuite",
   "owner": {
     "name": "Sean Cozart"
   },
-  "description": "Sean Cozart's Claude Code plugins \u2014 one plugin per problem.",
+  "description": "cozysuite: Sean Cozart's Claude Code tools, one plugin per problem. Tools install per project.",
   "allowCrossMarketplaceDependenciesOn": [
     "claude-plugins-official"
   ],
   "plugins": [
     {
+      "name": "cozysuite",
+      "description": "/cozysuite:setup picks this project's tools: it reads the repo, recommends a preset plus or minus named tools, and installs them at project scope after you confirm.",
+      "source": "./plugins/cozysuite",
+      "category": "setup"
+    },
+    {
+      "name": "core",
+      "description": "Preset for any code repo under the workflow: ai-sdlc, ponytail, cozy-view, cozy-setup.",
+      "source": "./plugins/core",
+      "category": "preset"
+    },
+    {
       "name": "ai-sdlc",
-      "description": "Ties agent work to source control: intent, GitHub issues, ADRs, a proof gate, and agent orchestration of issues.",
+      "description": "Ties agent work to source control: intent, GitHub issues, ADRs, a proof gate, and agent orchestration of issues. Needs mattpocock-skills (installed with it).",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/smcozart/cozy_ai-sdlc.git",
         "path": "plugin",
         "ref": "ai-sdlc--v1.8.0",
         "sha": "8399d5dbad1ab1ed56196fbe69a63a98200568a3"
+      }
+    },
+    {
+      "name": "ponytail",
+      "description": "Third party (DietrichGebert/ponytail): forces the simplest, shortest solution that works. Pinned here so it updates only when this catalog moves.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/DietrichGebert/ponytail.git",
+        "ref": "v4.9.0",
+        "sha": "0a4dd63ad4541f4f655c4108a295916f3c1d8fda"
       }
     },
     {
@@ -37,6 +59,16 @@
         "url": "https://github.com/smcozart/cozy_view.git",
         "ref": "cozy-view--v0.1.0",
         "sha": "c42ec94520c18950330443700ed48a80ea294bb8"
+      }
+    },
+    {
+      "name": "cozyskills",
+      "description": "Report and marketing skills: cozyreport (findings, metrics, changelogs as a published page), optimize-seo, optimize-aeo, skill-or-script. Private repo.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/smcozart/cozyskills.git",
+        "ref": "cozyskills--v0.3.0",
+        "sha": "841d543c7edb945765268152ba7c43625b8e783d"
       }
     }
   ]
