@@ -21,6 +21,12 @@
       "category": "preset"
     },
     {
+      "name": "site",
+      "description": "Preset for a cozystudio client site: studio, cozyskills.",
+      "source": "./plugins/site",
+      "category": "preset"
+    },
+    {
       "name": "ai-sdlc",
       "description": "Ties agent work to source control: intent, GitHub issues, ADRs, a proof gate, and agent orchestration of issues. Needs mattpocock-skills (installed with it).",
       "source": {
@@ -69,6 +75,16 @@
         "url": "https://github.com/smcozart/cozyskills.git",
         "ref": "cozyskills--v0.3.0",
         "sha": "841d543c7edb945765268152ba7c43625b8e783d"
+      }
+    },
+    {
+      "name": "studio",
+      "description": "cozystudio: client websites from intake to launch, checked the way a visitor sees them, and every later change as a preview and a forwardable report. Private repo.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/smcozart/cozystudio.git",
+        "ref": "studio--v0.2.0",
+        "sha": "dd5546bf599939222f4a3c841406ec04ade34b02"
       }
     }
   ]

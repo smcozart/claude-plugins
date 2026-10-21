@@ -1,0 +1,7 @@
+{
+  "name": "site",
+  "version": "0.1.0",
+  "description": "cozysuite preset for a cozystudio client site: studio, cozyskills.",
+  "author": { "name": "Sean Cozart" },
+  "dependencies": ["studio", "cozyskills"]
+}
