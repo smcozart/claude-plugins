@@ -8,11 +8,13 @@ committed `.claude/settings.json` names.
 |---|---|---|
 | `cozysuite` | `/cozysuite:setup` picks a project's tools: it reads the repo, recommends a preset ± tools, and installs at project scope after you confirm. You start it; it costs no context until then. | `./plugins/cozysuite` |
 | `core` (preset) | Any code repo under the workflow: `ai-sdlc`, `ponytail`, `cozy-view`, `cozy-setup`. | `./plugins/core` |
+| `site` (preset) | A cozystudio client site: `studio`, `cozyskills`. | `./plugins/site` |
 | `ai-sdlc` | Ties agent work to source control and sets up agent orchestration of issues. Needs `mattpocock-skills` (installed with it). | `smcozart/cozy_ai-sdlc` › `plugin/` |
 | `ponytail` | Third party: forces the simplest, shortest solution that works. Pinned here, so it moves only when this catalog does. | `DietrichGebert/ponytail` |
 | `cozy-setup` | The Cozy Architect output style (select `cozy-setup:Cozy Architect` once) and the macOS PATH guard hook. Private. | `smcozart/cozy_setup` |
 | `cozy-view` | Shows how agents and skills really behave: `/cozy-view:trace`, on Claude Code transcripts in Databricks. Sync is off until the machine opts in: `~/.config/cozy_view/profile` holds a Databricks profile name. Private. | `smcozart/cozy_view` |
 | `cozyskills` | Report and marketing skills: cozyreport, optimize-seo, optimize-aeo, skill-or-script. Private. | `smcozart/cozyskills` |
+| `studio` | cozystudio: client websites from intake to launch, checked the way a visitor sees them, and every later change as a preview and a report. Private. | `smcozart/cozystudio` |
 
 Private: install needs read access to the repo.
 
